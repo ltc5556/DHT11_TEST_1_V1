@@ -1,4 +1,14 @@
 @echo off
+chcp 65001 >nul
 cd /d "%~dp0"
-"C:\Program Files\Git\bin\bash.exe" -lc "git add . && git commit -m \"feat: DHT11 working sketch verified on UNO\" && git push && echo DONE"
+echo ===== git add =====
+"C:\Program Files\Git\cmd\git.exe" add -A
+echo ===== git status =====
+"C:\Program Files\Git\cmd\git.exe" status
+echo ===== git commit =====
+"C:\Program Files\Git\cmd\git.exe" commit -m "feat: add original and modified RTCtester sketches"
+echo ===== git push =====
+"C:\Program Files\Git\cmd\git.exe" push
+echo ===== done =====
+"C:\Program Files\Git\cmd\git.exe" log -1 --oneline
 pause
